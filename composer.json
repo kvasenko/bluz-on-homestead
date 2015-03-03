@@ -1,0 +1,13 @@
+{
+    "name": "bashmach/bluz-on-homestead",
+    "description": "Fork of laravel/homestead which allows to use it in a per-project way with Bluz skeleton application on board.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Machekhin",
+            "email": "pavel.machekhin@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
