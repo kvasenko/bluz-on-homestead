@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # extra provisioning
 #
@@ -7,14 +7,14 @@
 
 APP_PATH="/var/www"
 SKELETON_VERSION="~0.9"
+PROJECT_NAME="bluz"
 
 if [ ! -f "$APP_PATH/bluz/composer.json" ]; then
     cd $APP_PATH
 
-    composer create-project bluzphp/skeleton="$SKELETON_VERSION" ./bluz --prefer-dist
-
+    composer create-project bluzphp/skeleton="$SKELETON_VERSION" ./$PROJECT_NAME --prefer-dist
 else
-    cd "$APP_PATH/bluz"
+    cd "$APP_PATH/$PROJECT_NAME"
 
     composer install
 fi
