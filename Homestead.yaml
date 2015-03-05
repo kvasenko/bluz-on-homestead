@@ -4,10 +4,9 @@ ip: "172.0.13.37"
 memory: 2048
 cpus: 1
 
-authorize: ~/.ssh/homestead_rsa.pub
-
-keys:
-    - ~/.ssh/homestead_rsa
+#authorize: ~/.ssh/homestead_rsa.pub
+#keys:
+#    - ~/.ssh/homestead_rsa
 
 ports:
     - guest: 80
