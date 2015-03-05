@@ -28,8 +28,10 @@ databases:
     - bluz
 
 variables:
-    - key: APP_ENV
-      value: local
+    - key: BLUZ_ENV
+      value: dev
+    - key: BLUZ_DEBUG
+      value: 1
 
 # blackfire:
 #     - id: foo
