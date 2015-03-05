@@ -13,6 +13,14 @@ if [ ! -f "$APP_PATH/bluz/composer.json" ]; then
     cd $APP_PATH
 
     composer create-project bluzphp/skeleton="$SKELETON_VERSION" ./$PROJECT_NAME --prefer-dist
+
+    ## Copy config files for `dev` environment
+    cp /vagrant/files/configs/* /var/www/$PROJECT_NAME/application/configs/dev
+
+    ##
+    mysql -uhomestead -psecret $PROJECT_NAME < /var/www/$PROJECT_NAME/structure.ddl;
+    mysql -uhomestead -psecret $PROJECT_NAME < /var/www/$PROJECT_NAME/dump.sql;
+    mysql -uhomestead -psecret $PROJECT_NAME < /var/www/$PROJECT_NAME/tests/dump.sql;
 else
     cd "$APP_PATH/$PROJECT_NAME"
 
