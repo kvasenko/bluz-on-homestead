@@ -43,12 +43,38 @@ The following ports are forwarded to your Homestead environment:
 
 ## Blackfire
 
-... TBD ...
+bluz-on-homestead by default Install the blackfire-agent, blackfire-probe and blackfire CLI tool.
 
+For use blackfire you must configure your Blackfire credentials (https://blackfire.io/account/credentials).
+You need to add in Homestead.yaml:
+```
+blackfire:
+    - id: your_server_id
+    token: your_server_token
+    - id: your_client_id
+    token: your_client_token
+```
+If you want to configure blackfire later, then you would run the command:
+```
+blackfire config
+```
+And enter credentials:
+```
+Server Id: server_id
+Server Token: token_id
+```
+More information you can find in the official [documentation](https://blackfire.io/getting-started).
 # F.A.Q.
 
-... TBD ...
+### How to add additional Sites?
 
-# Documentation 
+Once your Homestead environment is provisioned and running, you may want to add additional Nginx sites for your Laravel applications. You can run as many Laravel installations as you wish on a single Homestead environment. There are two ways to do this: First, you may simply add the sites to your `Homestead.yaml` file and then run `vagrant provision`.
+
+Alternatively, you may use the `serve` script that is available on your Homestead environment. To use the `serve` script, SSH into your Homestead environment and run the following command:
+```
+serve domain.app /var/www/Code/path/to/public/directory
+```
+
+# Documentation
 
 Full official documentation of original Homestead project [is located here](http://laravel.com/docs/homestead).
